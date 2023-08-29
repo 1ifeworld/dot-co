@@ -6,7 +6,6 @@ import { OrbitControls } from '@react-three/drei';
 function App() {
   return (
     <div className="centered" className="canvas-container">
-      <h1>Lifeworld</h1>
       <Canvas>
         <perspectiveCamera position={[0, 15, 25]} />
         <ambientLight intensity={0.5} />

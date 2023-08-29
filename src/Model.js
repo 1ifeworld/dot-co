@@ -7,7 +7,7 @@ export function Model(props) {
   const { nodes, materials } = useGLTF("/lifeworld.glb");
   return (
     <group {...props} dispose={null}>
-      <group position={[-0.28, -0.09, 0]} rotation={[0.15, -0.2, 0]} scale={0.65}>
+      <group position={[-0.04, -0.15, 0]} rotation={[0.1, -0.03, 0]} scale={0.55}>
         <mesh
           castShadow
           receiveShadow
