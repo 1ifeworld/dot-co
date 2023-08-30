@@ -1,13 +1,14 @@
+import React, { useEffect } from 'react';
 import './App.css';
 import { Model } from './Model';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
 function App() {
   return (
-    <div className="centered" className="canvas-container">
+    <div className="canvas-container">
       <Canvas>
-        <perspectiveCamera position={[0, 15, 25]} />
+        <SetupCamera />
         <ambientLight intensity={0.5} />
         <directionalLight position={[0, 10, 5]} intensity={1} />
         <Model scale={[7,7,7]} />
@@ -18,6 +19,17 @@ function App() {
       </p>
     </div>
   );
+}
+
+function SetupCamera() {
+  const { camera, set } = useThree();
+
+  useEffect(() => {
+    camera.position.set(0.2, 2.5, 5.2);
+    set({ camera });
+  }, [camera, set]);
+
+  return null;
 }
 
 export default App;
