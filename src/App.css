@@ -48,6 +48,15 @@
 
 @media (max-width: 768px) {
   .canvas-container {
-    height: 55vh;
+    height: 107vh;
+    margin-top: 140px;
+    
+
+    .smoothed {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
