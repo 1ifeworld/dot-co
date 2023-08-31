@@ -7,15 +7,18 @@ import { OrbitControls } from '@react-three/drei';
 function App() {
   const [modelScale, setModelScale] = useState([5, 5, 5]);
   const [cameraPosition, setCameraPosition] = useState([0.2, 1.94, 5.2]);
+  const [modelPosition, setModelPosition] = useState([0, 0, 0]); // New state for model's position
 
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth <= 768) {
-        setModelScale([1.9, 1.9, 1.9]);
-        setCameraPosition([0.25, 2.85, 3.9]);
+        setModelScale([0.9, 0.9, 0.9]);
+        setCameraPosition([-3.15, 3.7, 4]);
+        setModelPosition([-0.7, 2.3, 2.8]); // Adjust the model's position for mobile
       } else {
         setModelScale([5, 5, 5]);
         setCameraPosition([0.2, 1.94, 5.2]);
+        setModelPosition([0, 0, 0]); // Default position for larger screens
       }
     }
 
@@ -30,7 +33,7 @@ function App() {
         <SetupCamera position={cameraPosition} />
         <ambientLight intensity={0.8} />
         <directionalLight position={[0, 10, 5]} intensity={1} />
-        <Model scale={modelScale} />
+        <Model scale={modelScale} position={modelPosition} /> {/* Pass the model's position as a prop */}
         <OrbitControls />
       </Canvas>
       <p className="smoothed">

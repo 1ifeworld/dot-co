@@ -3,10 +3,10 @@ import { useGLTF } from "@react-three/drei";
 
 useGLTF.preload('/model.gltf');
 
-export function Model({ scale = [1, 1, 1] }) {
+export function Model({ scale = [1, 1, 1], position = [0, 0, 0] }) {  // Added position with a default value
   const { nodes, materials } = useGLTF("/lifeworld.glb");
   return (
-    <group scale={scale} dispose={null}>
+    <group scale={scale} position={position} dispose={null}> {/* Apply the position prop here */}
       <group position={[0, -0.5, 0]} rotation={[0, 0, 0]}>
         <group position={[-0.15, 0.2, -2.1]} rotation={[-Math.PI, 1.543, -Math.PI]}>
           <mesh
