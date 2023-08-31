@@ -12,13 +12,13 @@ function App() {
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth <= 768) {
-        setModelScale([0.9, 0.9, 0.9]);
-        setCameraPosition([-3.15, 3.7, 4]);
-        setModelPosition([-0.7, 2.3, 2.8]);
+        setModelScale([2.7, 2.7, 2.7]);
+        setCameraPosition([-3, 3.7, 4]);
+        setModelPosition([3.8, -1.5, 0.3]);
       } else {
-        setModelScale([5, 5, 5]);
-        setCameraPosition([0.2, 1.94, 5.2]);
-        setModelPosition([0, 0, 0]);
+        setModelScale([4.4, 4.4, 4.4]);
+        setCameraPosition([0.35, 2.4, 5.2]);
+        setModelPosition([-0.2, -0.14, 0.8]);
       }
     }
 
@@ -31,9 +31,9 @@ function App() {
     <div className="canvas-container">
       <Canvas>
         <SetupCamera position={cameraPosition} />
-        <ambientLight intensity={0.8} />
-        <directionalLight position={[0, 10, 5]} intensity={1} />
-        <Model scale={modelScale} />
+        <ambientLight intensity={1.5} />
+        <directionalLight position={[5, 10, 5]} intensity={1} />
+        <Model scale={modelScale} position={modelPosition} />
         <OrbitControls />
       </Canvas>
       <p className="smoothed">

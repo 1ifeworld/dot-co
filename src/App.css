@@ -20,7 +20,6 @@
 
 @media (max-width: 768px) {
   .canvas-container {
-    margin-top: 120px;
-    height: 750px;
+    height: 100vh;
   }
 }
