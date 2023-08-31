@@ -31,9 +31,9 @@ function App() {
     <div className="canvas-container">
       <Canvas>
         <SetupCamera position={cameraPosition} />
-        <ambientLight intensity={1} />
+        <ambientLight intensity={0.8} />
         <directionalLight position={[0, 10, 5]} intensity={1} />
-        <Model scale={modelScale} position={modelPosition} />
+        <Model scale={modelScale} />
         <OrbitControls />
       </Canvas>
       <p className="smoothed">
