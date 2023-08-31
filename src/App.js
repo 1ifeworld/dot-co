@@ -5,17 +5,17 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
 function App() {
-  const [modelScale, setModelScale] = useState([4.8, 4.8, 4.8]);
-  const [cameraPosition, setCameraPosition] = useState([0.2, 2, 5.2]);
+  const [modelScale, setModelScale] = useState([5, 5, 5]);
+  const [cameraPosition, setCameraPosition] = useState([0.2, 1.94, 5.2]);
 
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth <= 768) {
-        setModelScale([2, 2, 2]);
-        setCameraPosition([0.35, 2.85, 3.8]);
+        setModelScale([1.9, 1.9, 1.9]);
+        setCameraPosition([0.25, 2.85, 3.9]);
       } else {
-        setModelScale([4.8, 4.8, 4.8]);
-        setCameraPosition([0.2, 2, 5.2]);
+        setModelScale([5, 5, 5]);
+        setCameraPosition([0.2, 1.94, 5.2]);
       }
     }
 
