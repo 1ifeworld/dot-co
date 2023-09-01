@@ -2,23 +2,23 @@ import React, { useState, useEffect } from 'react';
 import './Loading.css';
 
 function Loading() {
-  const [dots, setDots] = useState('');
+  const [dotCount, setDotCount] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (dots.length < 3) {
-        setDots(dots + '.');
-      } else {
-        setDots('');
-      }
+      setDotCount((prevCount) => (prevCount === 3 ? 1 : prevCount + 1));
     }, 500);
-
     return () => clearInterval(interval);
-  }, [dots]);
+  }, []);
 
   return (
     <div className="loading-container">
-      <p className="loading-text">Loading{dots}</p>
+      <p className="loading-text">
+        loading
+        <span style={{ opacity: dotCount >= 1 ? 1 : 0 }}>.</span>
+        <span style={{ opacity: dotCount >= 2 ? 1 : 0 }}>.</span>
+        <span style={{ opacity: dotCount >= 3 ? 1 : 0 }}>.</span>
+      </p>
     </div>
   );
 }

@@ -6,6 +6,9 @@
   }
   
   .loading-text {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
     font-size: 13px;
     color: #3E3E3E;
     font-family: Helvetica, sans-serif; 
