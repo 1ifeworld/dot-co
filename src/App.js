@@ -40,7 +40,7 @@ function App() {
         <SetupCamera position={cameraPosition} />
         <ambientLight intensity={1.5} />
         <directionalLight position={[5, 10, 5]} intensity={1} />
-        <Model scale={modelScale} position={modelPosition} />
+        {active && progress !== total ? <Loading /> : <Model scale={modelScale} position={modelPosition} />}
         <OrbitControls />
       </Canvas>
       <p className="smoothed">
