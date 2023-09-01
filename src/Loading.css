@@ -1,18 +1,17 @@
 .loading-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .loading-text {
-    display: inline-block;
-    width: 30px;
-    text-align: center;
-    font-size: 13px;
-    color: #3E3E3E;
-    font-family: Helvetica, sans-serif; 
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-text {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: #3E3E3E;
+  font-family: Helvetica, sans-serif; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
