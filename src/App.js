@@ -36,17 +36,18 @@ function App() {
 
   return (
     <div className="canvas-container">
-      {active && progress !== total ? (
-        <Loading />
-      ) : (
-        <Canvas>
-          <SetupCamera position={cameraPosition} />
-          <ambientLight intensity={1.5} />
-          <directionalLight position={[5, 10, 5]} intensity={1} />
-          <Model scale={modelScale} position={modelPosition} />
-          <OrbitControls />
-        </Canvas>
-      )}
+      <Canvas>
+        {active && progress !== total ? null : (
+          <>
+            <SetupCamera position={cameraPosition} />
+            <ambientLight intensity={1.5} />
+            <directionalLight position={[5, 10, 5]} intensity={1} />
+            <Model scale={modelScale} position={modelPosition} />
+            <OrbitControls />
+          </>
+        )}
+      </Canvas>
+      {active && progress !== total && <Loading />}
       <p className="smoothed">
         <a href="mailto:everything@lifeworld.co">everything@lifeworld.co</a>
       </p>
