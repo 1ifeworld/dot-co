@@ -3,11 +3,14 @@ import './App.css';
 import { Model } from './Model';
 import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import Loading from './Loading'; 
+import { useProgress } from '@react-three/drei'; 
 
 function App() {
   const [modelScale, setModelScale] = useState([5, 5, 5]);
   const [cameraPosition, setCameraPosition] = useState([0.2, 1.94, 5.2]);
   const [modelPosition, setModelPosition] = useState([0, 0, 0]);
+  const { active, progress, total } = useProgress();
 
   useEffect(() => {
     function handleResize() {
@@ -26,6 +29,10 @@ function App() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  if (active && progress !== total) {
+    return <Loading />;
+  }
 
   return (
     <div className="canvas-container">
