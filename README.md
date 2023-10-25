@@ -1,2 +1,2 @@
-# lifeworld-site
+# dot-co
 site for lifeworld
